@@ -62,17 +62,23 @@
       border-radius: 8px;
       font-size: 0.9rem;
     }
+    
 
     header.custom-header {
       background-color: #6287d6;
       color: white;
-      padding: 3rem 1rem 2rem 1rem;
-      border-radius: 0 0 12px 12px;
+      padding: 2rem 1rem;
+      border-radius: 0 0 16px 16px;
       width: 100%;
       text-align: center;
     }
+
   
-    .custom-header h1,
+    .custom-header h1 {
+      font-size: 2rem;
+      line-height: 1.3;
+      font-weight: 600;
+    }
     .custom-header p,
     .custom-header small,
     .custom-header a {
@@ -105,7 +111,26 @@
       border-bottom: 1px solid #dee2e6;
       padding-bottom: 0.5rem;
     }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
     
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-delay-1 {
+      animation-delay: 0.3s;
+    }
+    .fade-delay-2 {
+      animation-delay: 0.6s;
+    }
     
   </style>
 </head>
@@ -113,26 +138,28 @@
   
 
     <!-- ================= HEADER ================= -->
-    <header class="custom-header w-100">
+    <header class="custom-header w-100 fade-in">
       <div class="container">
         <h1 class="h3 fw-semibold">Language-Guided Trajectory Traversal<br>
           in Disentangled Stable Diffusion Latent Space<br>
           for Factorized Medical Image Generation</h1>
         
-        <p class="lead mb-1 d-flex flex-wrap justify-content-center gap-4">
-          <span class="d-flex flex-column text-center">
-            Zahra TehraniNasab*
-            <small class="text-white-50">McGill University<br>MILA-Quebec AI Institute</small>
-          </span>
-          <span class="d-flex flex-column text-center">
-            Amar Kumar*
-            <small class="text-white-50">McGill University<br>MILA-Quebec AI Institute</small>
-          </span>
-          <span class="d-flex flex-column text-center">
-            Tal Arbel
-            <small class="text-white-50">McGill University<br>MILA-Quebec AI Institute</small>
-          </span>
-        </p>
+        
+        <div class="row justify-content-center my-3">
+          <div class="col-md-3 text-center">
+            <strong>Zahra TehraniNasab*</strong><br>
+            <small class="text-white-50">McGill University, MILA-Quebec AI Institute</small>
+          </div>
+          <div class="col-md-3 text-center">
+            <strong>Amar Kumar*</strong><br>
+            <small class="text-white-50">McGill University, MILA-Quebec AI Institute</small>
+          </div>
+          <div class="col-md-3 text-center">
+            <strong>Tal Arbel</strong><br>
+            <small class="text-white-50">McGill University, MILA-Quebec AI Institute</small>
+          </div>
+        </div>
+          
     
         <p class="fst-italic small">*Equal contribution</p>
         <p class="text-white-50 mb-3">Accepted @ MIV-CVPR Workshop Proceedings 2025</p>
@@ -142,7 +169,7 @@
     </header>
   <div class="container-lg my-4">
     <!-- ================= TEASER ================= -->
-    <figure class="text-center">
+    <figure class="text-center fade-in">
       <div class="d-inline-block w-50 text-start"> <!-- Add text-start here -->
         <img src="images/trajectory-traversal.jpg" alt="Paper teaser figure" class="img-fluid rounded">
         <figcaption class="text-muted small mt-2">
