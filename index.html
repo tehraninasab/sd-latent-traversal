@@ -83,6 +83,26 @@
       background-color: white;
       color: #317d82;
     }
+
+    section {
+      background-color: white;
+      border: 1px solid #e3e6ea;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+    
+    section h2 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #2f3e46;
+      border-bottom: 1px solid #dee2e6;
+      padding-bottom: 0.5rem;
+    }
+    
+    
   </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#toc" data-bs-smooth-scroll="true" tabindex="0">
@@ -91,7 +111,9 @@
     <!-- ================= HEADER ================= -->
     <header class="custom-header w-100">
       <div class="container">
-        <h1 class="display-5 fw-semibold">Language-Guided Trajectory Traversal in Disentangled Stable Diffusion Latent Space for Factorized Medical Image Generation</h1>
+        <h1 class="h3 fw-semibold">Language-Guided Trajectory Traversal<br>
+          in Disentangled Stable Diffusion Latent Space<br>
+          for Factorized Medical Image Generation</h1>
         
         <p class="lead mb-1 d-flex flex-wrap justify-content-center gap-4">
           <span class="d-flex flex-column text-center">
@@ -135,9 +157,9 @@
 
         <section id="abstract" class="mb-5">
           <h2>Abstract</h2>
-          <p>
-            Text-to-image diffusion models have demonstrated a remarkable ability to generate photorealistic images from natural language prompts. These high-resolution, language-guided synthesized images are essential for the explainability of disease or exploring causal relationships. However, their potential for disentangling and controlling latent factors of variation in specialized domains like medical imaging remains under-explored. In this work, we present the first investigation of the power of pre-trained vision-language foundation models, once fine-tuned on medical image datasets, to perform latent disentanglement for factorized medical image generation and interpolation. Through extensive experiments on chest X-ray and skin datasets, we illustrate that fine-tuned, language-guided Stable Diffusion inherently learns to factorize key attributes for image generation, such as the patient's anatomical structures or disease diagnostic features. We devise a framework to identify, isolate, and manipulate key attributes through latent space trajectory traversal of generative models, facilitating precise control over medical image synthesis.
-          </p>
+            <p>
+              Text-to-image diffusion models have demonstrated a remarkable ability to generate photorealistic images from natural language prompts. These high-resolution, language-guided synthesized images are essential for the explainability of disease or exploring causal relationships. However, their potential for disentangling and controlling latent factors of variation in specialized domains like medical imaging remains under-explored. In this work, we present the first investigation of the power of pre-trained vision-language foundation models, once fine-tuned on medical image datasets, to perform latent disentanglement for factorized medical image generation and interpolation. Through extensive experiments on chest X-ray and skin datasets, we illustrate that fine-tuned, language-guided Stable Diffusion inherently learns to factorize key attributes for image generation, such as the patient's anatomical structures or disease diagnostic features. We devise a framework to identify, isolate, and manipulate key attributes through latent space trajectory traversal of generative models, facilitating precise control over medical image synthesis.
+            </p>
         </section>
 
 
