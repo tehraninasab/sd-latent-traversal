@@ -25,56 +25,107 @@
       font-weight: 600;
       text-decoration: underline;
     }
+
+    footer.custom-footer {
+      background-color: #33338d; /* Similar teal-blue */
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+  
+    .footer-box {
+      background-color: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+      padding: 1.5rem;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
+  
+    .footer-box h5 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+  
+    .footer-box p {
+      margin-bottom: 0;
+    }
+  
+    .visitor-counter {
+      background-color: rgba(255, 255, 255, 0.1);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    header.custom-header {
+      background-color: #33338d;
+      color: white;
+      padding: 3rem 1rem 2rem 1rem;
+      border-radius: 0 0 12px 12px;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .custom-header h1,
+    .custom-header p,
+    .custom-header small,
+    .custom-header a {
+      color: white !important;
+    }
+  
+    .custom-header .btn-outline-primary {
+      border-color: white;
+      color: white;
+    }
+  
+    .custom-header .btn-outline-primary:hover {
+      background-color: white;
+      color: #317d82;
+    }
   </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#toc" data-bs-smooth-scroll="true" tabindex="0">
-  <div class="container-lg my-4">
+  
 
     <!-- ================= HEADER ================= -->
-    <header class="text-center mb-4">
-      <h1 class="display-5 fw-semibold">Language-Guided Trajectory Traversal in Disentangled Stable Diffusion Latent Space for Factorized Medical Image Generation</h1>
-      
-      <p class="lead mb-1 d-flex flex-wrap justify-content-center gap-4">
-        <span class="d-flex flex-column text-center">
-          Zahra TehraniNasab*
-          <small class="text-muted">
-            McGill University<br>MILA-Quebec AI Institute
-          </small>
-        </span>
-      
-        <span class="d-flex flex-column text-center">
-          Amar Kumar*
-          <small class="text-muted">
-            McGill University<br>MILA-Quebec AI Institute
-          </small>
-        </span>
-      
-        <span class="d-flex flex-column text-center">
-          Tal Arbel
-          <small class="text-muted">
-            McGill University<br>MILA-Quebec AI Institute
-          </small>
-        </span>
-      </p>
-      
-      <p class="fst-italic small">*Equal contribution</p>
-
-      <p class="text-muted mb-2">Accepted @ MIV-CVPR Workshop Proceedings 2025</p>
-
-      <!-- call-to-action buttons -->
-      <a class="btn btn-primary me-2"  href="https://arxiv.org/abs/2503.23623"            target="_blank" rel="noopener">📄 Paper</a>
-      <a class="btn btn-outline-primary" href="https://github.com/tehraninasab/sd-latent-traversal" target="_blank" rel="noopener">💻 Code</a>
+    <header class="custom-header w-100">
+      <div class="container">
+        <h1 class="display-5 fw-semibold">Language-Guided Trajectory Traversal in Disentangled Stable Diffusion Latent Space for Factorized Medical Image Generation</h1>
+        
+        <p class="lead mb-1 d-flex flex-wrap justify-content-center gap-4">
+          <span class="d-flex flex-column text-center">
+            Zahra TehraniNasab*
+            <small class="text-white-50">McGill University<br>MILA-Quebec AI Institute</small>
+          </span>
+          <span class="d-flex flex-column text-center">
+            Amar Kumar*
+            <small class="text-white-50">McGill University<br>MILA-Quebec AI Institute</small>
+          </span>
+          <span class="d-flex flex-column text-center">
+            Tal Arbel
+            <small class="text-white-50">McGill University<br>MILA-Quebec AI Institute</small>
+          </span>
+        </p>
+    
+        <p class="fst-italic small">*Equal contribution</p>
+        <p class="text-white-50 mb-3">Accepted @ MIV-CVPR Workshop Proceedings 2025</p>
+        <a class="btn btn-outline-light me-2" href="https://arxiv.org/abs/2503.23623" target="_blank" rel="noopener">📄 Paper</a>
+        <a class="btn btn-outline-light" href="https://github.com/tehraninasab/sd-latent-traversal" target="_blank" rel="noopener">💻 Code</a>
+      </div>
     </header>
-
+  <div class="container-lg my-4">
     <!-- ================= TEASER ================= -->
     <figure class="text-center">
-      <img src="images/trajectory-traversal.jpg" alt="Paper teaser figure" class="img-fluid w-50">
-      <figcaption class="text-muted small mt-2"> Traversal along the latent trajectories of Stable Diffusion using language guidance. Given an
-        initial chest X-ray projected onto latent space (start point), traversal along the trajectory is performed
-        via language guidance. Sampling along the trajectory results in only a single attribute (e.g. “medical
-        devices", “pleural effusion") being altered from the start point (“neutral"), while the patient identity
-        is maintained. </figcaption>
+      <div class="d-inline-block w-50 text-start"> <!-- Add text-start here -->
+        <img src="images/trajectory-traversal.jpg" alt="Paper teaser figure" class="img-fluid rounded">
+        <figcaption class="text-muted small mt-2">
+          Traversal along the latent trajectories of Stable Diffusion using language guidance. Given an initial chest X-ray projected onto latent space (start point), traversal along the trajectory is performed via language guidance. Sampling along the trajectory results in only a single attribute (e.g. “medical devices”, “pleural effusion”) being altered from the start point (“neutral”), while the patient identity is maintained.
+        </figcaption>
+      </div>
     </figure>
+    
+    
 
     <!-- ================= BODY LAYOUT ============ -->
     <div class="row gx-5 mt-4 justify-content-center">
@@ -106,24 +157,23 @@
     </div><!-- /row -->
   </div><!-- /container -->
 
-  <footer>
-        <div class="container">
-            
-            <div class="acknowledgements">
-                <h3>Acknowledgments and Funding</h3>
-                <p>The authors are grateful for funding provided by the Natural Sciences and Engineering Research Council of Canada, the Canadian Institute for Advanced Research (CIFAR) Artificial Intelligence Chairs program, Mila - Quebec AI Institute, Google Research, Calcul Québec, and the Digital Research Alliance of Canada.</p>
-            </div>
-        </div>
-        <p></p>
-        <p>© Zahra TehraniNasab, Amar Kumar | 2025 MIV-CVPR Workshop Proceedings</p>
-        <div class="container">
-            <div class="footer-content">
-                <div class="visitor-counter">
-                    <span id="visitor-count">Loading...</span> visitors to this page
-                </div>
-            </div>
-        </div>
-    </footer>
+  <footer class="custom-footer">
+    <div class="footer-box">
+      <h5>Acknowledgments and Funding</h5>
+      <p class="small">
+        The authors are grateful for funding provided by the Natural Sciences and Engineering Research Council of Canada, the Canadian Institute for Advanced Research (CIFAR) Artificial Intelligence Chairs program, Mila - Quebec AI Institute, Google Research, Calcul Québec, Fonds de recherche du Québec (FRQNT), and the Digital Research Alliance of Canada.
+      </p>
+    </div>
+  
+    <p class="small mb-3">© Zahra TehraniNasab, Amar Kumar | 2025 MIV-CVPR Workshop Proceedings</p>
+  
+    <div class="visitor-counter">
+      <span id="visitor-count">Loading...</span> visitors to this page
+    </div>
+  </footer>
+  
+  
+  
 
   <!-- Bootstrap JS bundle (scrollspy, collapse, etc.) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
