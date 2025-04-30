@@ -1,0 +1,6 @@
+name = "sd-latent-traversal"
+main = "src/index.js"
+compatibility_date = "2025-04-30"
+kv_namespaces = [
+  { binding = "COUNTER_VISITOR", id = "77d733be98c048eb8ac921846e5a0d02" }
+]
