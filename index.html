@@ -1,377 +1,461 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <!-- mobile-friendly scaling -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project-Title – Paper Page</title>
+  <head>
+    <meta charset="utf-8" />
+    <!-- mobile-friendly scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project-Title – Paper Page</title>
 
-  <!-- Bootstrap 5 CSS (responsive grid, utilities, ScrollSpy) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f5ef; /* soft beige */
-      color: #333;
-    }
-    /* Make the “Contents” list stick on desktop */
-    @media (min-width: 768px) {
-      #toc {
-        position: sticky;
-        top: 1rem;        /* starts sticking just below the top bar */
-        max-height: 80vh; /* never run off screen */
-        overflow-y: auto;
+    <!-- Bootstrap 5 CSS (responsive grid, utilities, ScrollSpy) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f9f5ef; /* soft beige */
+        color: #333;
       }
-    }
+      /* Make the “Contents” list stick on desktop */
+      @media (min-width: 768px) {
+        #toc {
+          position: sticky;
+          top: 1rem; /* starts sticking just below the top bar */
+          max-height: 80vh; /* never run off screen */
+          overflow-y: auto;
+        }
+      }
 
-    /* Simple accent for active ScrollSpy link */
-    #toc .nav-link.active {
-      font-weight: 600;
-      text-decoration: underline;
-    }
+      /* Simple accent for active ScrollSpy link */
+      #toc .nav-link.active {
+        font-weight: 600;
+        text-decoration: underline;
+      }
 
-    footer.custom-footer {
-      background-color: #d8cfc4; /* Similar teal-blue */
-      color: #3b3b3b;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-  
-    .footer-box {
-      background-color: #e8dfd7; /* slightly darker than beige background */
-      padding: 1.5rem;
-      border-radius: 12px;
-      max-width: 900px;
-      margin: 0 auto 1rem auto;
-    }    
-  
-    .footer-box h5 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-  
-    .footer-box p {
-      margin-bottom: 0;
-    }
-  
-    .visitor-counter {
-      background-color: #e8dfd7;
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
-    }
-    
+      footer.custom-footer {
+        background-color: #d8cfc4; /* Similar teal-blue */
+        color: #3b3b3b;
+        text-align: center;
+        padding: 3rem 1rem;
+      }
 
-    header.custom-header {
-      background-color: #d8cfc4	;
-      color: #2f2f2f;
-      padding: 2rem 1rem;
-      border-radius: 0 0 16px 16px;
-      width: 100%;
-      text-align: center;
-    }
+      .footer-box {
+        background-color: #e8dfd7; /* slightly darker than beige background */
+        padding: 1.5rem;
+        border-radius: 12px;
+        max-width: 900px;
+        margin: 0 auto 1rem auto;
+      }
 
-  
-    .custom-header h1 {
-      color: #800020;
-      font-size: 2rem;
-      line-height: 1.3;
-      font-weight: 500;
-      letter-spacing: 0.5px
-    }
-    .custom-header p,
-    .custom-header small,
-    .custom-header a {
-      color: #2f2f2f !important;
-    }
-  
-    .custom-header .btn-outline-primary {
-      border-color: white;
-      color: white;
-    }
-  
-    .custom-header .btn-outline-primary:hover {
-      background-color: white;
-      color: #317d82;
-    }
+      .footer-box h5 {
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
 
-    section {
-      background-color: #ffffff;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }    
-    
-    section h2 {
-      font-weight: 600;
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      color: #800020;
-      border-bottom: 1px solid #dee2e6;
-      padding-bottom: 0.5rem;
-    }
+      .footer-box p {
+        margin-bottom: 0;
+      }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeInUp 1s ease-out forwards;
-    }
-    
-    @keyframes fadeInUp {
-      to {
+      .visitor-counter {
+        background-color: #e8dfd7;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      header.custom-header {
+        background-color: #d8cfc4;
+        color: #2f2f2f;
+        padding: 2rem 1rem;
+        border-radius: 0 0 16px 16px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .custom-header h1 {
+        color: #800020;
+        font-size: 2rem;
+        line-height: 1.3;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+      .custom-header p,
+      .custom-header small,
+      .custom-header a {
+        color: #2f2f2f !important;
+      }
+
+      .custom-header .btn-outline-primary {
+        border-color: white;
+        color: white;
+      }
+
+      .custom-header .btn-outline-primary:hover {
+        background-color: white;
+        color: #317d82;
+      }
+
+      section {
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+
+      section.visible {
         opacity: 1;
         transform: translateY(0);
       }
-    }
-    
-    .fade-delay-1 {
-      animation-delay: 0.3s;
-    }
-    .fade-delay-2 {
-      animation-delay: 0.6s;
-    }
 
-    .author-link {
-      color: #ffecb3; /* soft yellow that pops on blue */
-      text-decoration: underline;
-      font-weight: 600;
-    }
-    
-    .author-link:hover {
-      color: #fff;
-      text-decoration: none;
-    }
+      section h2 {
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: #800020;
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 0.5rem;
+      }
 
-    .custom-btn {
-      background-color: #2f2f2f;
-      color: white !important;
-      border-radius: 999px;
-      padding: 0.5rem 1.2rem;
-      display: inline-flex;
-      align-items: center;
-      font-weight: 500;
-      font-size: 1rem;
-      border: none;
-      text-decoration: none;
-    }
-    
-    /* Force link state colors to white too */
-    .custom-btn:link,
-    .custom-btn:visited,
-    .custom-btn:active {
-      color: white !important;
-      text-decoration: none;
-    }    
-    
-    .custom-btn:hover {
-      background-color: #1e1e1e;
-      text-decoration: none;
-      color: white;
-    }
-    
-    .custom-btn img {
-      vertical-align: middle;
-    }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeInUp 1s ease-out forwards;
+      }
 
-    .github-btn {
-      background-color: #2f2f2f;
-      border: none;
-      border-radius: 999px;
-      padding: 0.5rem 1.2rem;
-      display: inline-flex;
-      align-items: center;
-      font-weight: 500;
-      font-size: 1rem;
-      text-decoration: none;
-      color: white !important;
-    }
-    
-    .github-btn:link,
-    .github-btn:visited,
-    .github-btn:active,
-    .github-btn:focus {
-      color: white !important;
-      text-decoration: none;
-      background-color: #1e1e1e;
-    }
-    
-    
-    .github-btn:hover {
-      background-color: #1e1e1e;
-      text-decoration: none;
-      color: white;
-    }
-    
-    .github-btn img {
-      vertical-align: middle;
-    }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-    .workshop-name {
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-    
-    .custom-header .workshop-name {
-      color: #ad2e2e !important;
-    }
-    
-    
-  </style>
-</head>
-<body data-bs-spy="scroll" data-bs-target="#toc" data-bs-smooth-scroll="true" tabindex="0">
-  
+      .fade-delay-1 {
+        animation-delay: 0.3s;
+      }
+      .fade-delay-2 {
+        animation-delay: 0.6s;
+      }
 
+      .author-link {
+        color: #ffecb3; /* soft yellow that pops on blue */
+        text-decoration: underline;
+        font-weight: 600;
+      }
+
+      .author-link:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .custom-btn {
+        background-color: #2f2f2f;
+        color: white !important;
+        border-radius: 999px;
+        padding: 0.5rem 1.2rem;
+        display: inline-flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 1rem;
+        border: none;
+        text-decoration: none;
+      }
+
+      /* Force link state colors to white too */
+      .custom-btn:link,
+      .custom-btn:visited,
+      .custom-btn:active {
+        color: white !important;
+        text-decoration: none;
+      }
+
+      .custom-btn:hover {
+        background-color: #1e1e1e;
+        text-decoration: none;
+        color: white;
+      }
+
+      .custom-btn img {
+        vertical-align: middle;
+      }
+
+      .github-btn {
+        background-color: #2f2f2f;
+        border: none;
+        border-radius: 999px;
+        padding: 0.5rem 1.2rem;
+        display: inline-flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 1rem;
+        text-decoration: none;
+        color: white !important;
+      }
+
+      .github-btn:link,
+      .github-btn:visited,
+      .github-btn:active,
+      .github-btn:focus {
+        color: white !important;
+        text-decoration: none;
+        background-color: #1e1e1e;
+      }
+
+      .github-btn:hover {
+        background-color: #1e1e1e;
+        text-decoration: none;
+        color: white;
+      }
+
+      .github-btn img {
+        vertical-align: middle;
+      }
+
+      .workshop-name {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+      }
+
+      .custom-header .workshop-name {
+        color: #ad2e2e !important;
+      }
+    </style>
+  </head>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#toc"
+    data-bs-smooth-scroll="true"
+    tabindex="0"
+  >
     <!-- ================= HEADER ================= -->
     <header class="custom-header w-100 fade-in">
       <div class="container">
-        <h1 class="h3 fw-semibold">Language-Guided Trajectory Traversal<br>
-          in Disentangled Stable Diffusion Latent Space<br>
-          for Factorized Medical Image Generation</h1>
-        
-      
+        <h1 class="h3 fw-semibold">
+          Language-Guided Trajectory Traversal<br />
+          in Disentangled Stable Diffusion Latent Space<br />
+          for Factorized Medical Image Generation
+        </h1>
+
         <div class="row justify-content-center my-3">
           <div class="col-md-3 text-center">
-            <strong><a href="https://tehraninasab.github.io" target="_blank" rel="noopener noreferrer" class="author-link">Zahra TehraniNasab*</a></strong><br>
-            <small class="text-white-50">McGill University, MILA-Quebec AI Institute</small>
+            <strong
+              ><a
+                href="https://tehraninasab.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="author-link"
+                >Zahra TehraniNasab*</a
+              ></strong
+            ><br />
+            <small class="text-white-50"
+              >McGill University, MILA-Quebec AI Institute</small
+            >
           </div>
           <div class="col-md-3 text-center">
-            <strong><a href="https://amarkr1.github.io/" target="_blank" rel="noopener noreferrer" class="author-link">Amar Kumar*</a></strong><br>
-            <small class="text-white-50">McGill University, MILA-Quebec AI Institute</small>
+            <strong
+              ><a
+                href="https://amarkr1.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="author-link"
+                >Amar Kumar*</a
+              ></strong
+            ><br />
+            <small class="text-white-50"
+              >McGill University, MILA-Quebec AI Institute</small
+            >
           </div>
           <div class="col-md-3 text-center">
-            <strong><a href="https://cim.mcgill.ca/~arbel/" target="_blank" rel="noopener noreferrer" class="author-link">Tal Arbel</a></strong><br>
-            <small class="text-white-50">McGill University, MILA-Quebec AI Institute</small>
+            <strong
+              ><a
+                href="https://cim.mcgill.ca/~arbel/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="author-link"
+                >Tal Arbel</a
+              ></strong
+            ><br />
+            <small class="text-white-50"
+              >McGill University, MILA-Quebec AI Institute</small
+            >
           </div>
         </div>
-          
-          
-        <p class="small" style="font-size: 0.8rem;">*Equal contribution</p>
+
+        <p class="small" style="font-size: 0.8rem">*Equal contribution</p>
         <p class="workshop-name">MIV-CVPR Workshop Proceedings 2025</p>
         <!-- arXiv button (unchanged) -->
-        <a class="custom-btn" href="https://arxiv.org/abs/2503.23623" target="_blank" rel="noopener noreferrer">
-          <img src="images/arxiv-icon.svg" alt="arXiv" width="20" height="20" class="me-2"> arXiv
+        <a
+          class="custom-btn"
+          href="https://arxiv.org/abs/2503.23623"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="images/arxiv-icon.svg"
+            alt="arXiv"
+            width="20"
+            height="20"
+            class="me-2"
+          />
+          arXiv
         </a>
 
         <!-- GitHub button (now using same class) -->
-        <a class="custom-btn ms-2" href="https://github.com/tehraninasab/sd-latent-traversal" target="_blank" rel="noopener noreferrer">
-          <img src="images/github-icon.svg" alt="GitHub" width="20" height="20" class="me-2"> Code
-        </a>       
+        <a
+          class="custom-btn ms-2"
+          href="https://github.com/tehraninasab/sd-latent-traversal"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="images/github-icon.svg"
+            alt="GitHub"
+            width="20"
+            height="20"
+            class="me-2"
+          />
+          Code
+        </a>
       </div>
     </header>
-  <div class="container-lg my-4">
-    <!-- ================= TEASER ================= -->
-    <figure class="text-center fade-in">
-      <div class="d-inline-block w-50 text-start"> <!-- Add text-start here -->
-        <img src="images/trajectory-traversal.jpg" alt="Paper teaser figure" class="img-fluid rounded">
-        <figcaption class="text-muted small mt-2">
-          Traversal along the latent trajectories of Stable Diffusion using language guidance. Given an initial chest X-ray projected onto latent space (start point), traversal along the trajectory is performed via language guidance. Sampling along the trajectory results in only a single attribute (e.g. “medical devices”, “pleural effusion”) being altered from the start point (“neutral”), while the patient identity is maintained.
-        </figcaption>
-      </div>
-    </figure>
-    
-    
+    <div class="container-lg my-4">
+      <!-- ================= TEASER ================= -->
+      <figure class="text-center fade-in">
+        <div class="d-inline-block w-50 text-start">
+          <!-- Add text-start here -->
+          <img
+            src="images/trajectory-traversal.jpg"
+            alt="Paper teaser figure"
+            class="img-fluid rounded"
+          />
+          <figcaption class="text-muted small mt-2">
+            Traversal along the latent trajectories of Stable Diffusion using
+            language guidance. Given an initial chest X-ray projected onto
+            latent space (start point), traversal along the trajectory is
+            performed via language guidance. Sampling along the trajectory
+            results in only a single attribute (e.g. “medical devices”, “pleural
+            effusion”) being altered from the start point (“neutral”), while the
+            patient identity is maintained.
+          </figcaption>
+        </div>
+      </figure>
 
-    <!-- ================= BODY LAYOUT ============ -->
-    <div class="row gx-5 mt-4 justify-content-center">
-
-      <!-- -------- Main article -------- -->
-      <main class="col-lg-8 mx-auto">
-
-        <section id="abstract" class="mb-5">
-          <h2>Abstract</h2>
+      <!-- ================= BODY LAYOUT ============ -->
+      <div class="row gx-5 mt-4 justify-content-center">
+        <!-- -------- Main article -------- -->
+        <main class="col-lg-8 mx-auto">
+          <section id="abstract" class="mb-5">
+            <h2>Abstract</h2>
             <p>
-              Text-to-image diffusion models have demonstrated a remarkable ability to generate photorealistic images from natural language prompts. These high-resolution, language-guided synthesized images are essential for the explainability of disease or exploring causal relationships. However, their potential for disentangling and controlling latent factors of variation in specialized domains like medical imaging remains under-explored. In this work, we present the first investigation of the power of pre-trained vision-language foundation models, once fine-tuned on medical image datasets, to perform latent disentanglement for factorized medical image generation and interpolation. Through extensive experiments on chest X-ray and skin datasets, we illustrate that fine-tuned, language-guided Stable Diffusion inherently learns to factorize key attributes for image generation, such as the patient's anatomical structures or disease diagnostic features. We devise a framework to identify, isolate, and manipulate key attributes through latent space trajectory traversal of generative models, facilitating precise control over medical image synthesis.
+              Text-to-image diffusion models have demonstrated a remarkable
+              ability to generate photorealistic images from natural language
+              prompts. These high-resolution, language-guided synthesized images
+              are essential for the explainability of disease or exploring
+              causal relationships. However, their potential for disentangling
+              and controlling latent factors of variation in specialized domains
+              like medical imaging remains under-explored. In this work, we
+              present the first investigation of the power of pre-trained
+              vision-language foundation models, once fine-tuned on medical
+              image datasets, to perform latent disentanglement for factorized
+              medical image generation and interpolation. Through extensive
+              experiments on chest X-ray and skin datasets, we illustrate that
+              fine-tuned, language-guided Stable Diffusion inherently learns to
+              factorize key attributes for image generation, such as the
+              patient's anatomical structures or disease diagnostic features. We
+              devise a framework to identify, isolate, and manipulate key
+              attributes through latent space trajectory traversal of generative
+              models, facilitating precise control over medical image synthesis.
             </p>
-        </section>
+          </section>
 
-        <section id="introduction" class="mb-5">
-          <h2>Introduction</h2>
-          <p>
-            Deep learning models for medical imaging have shown
-            state-of-the-art performance across several tasks such as disease
-            classification, image segmentation, drug discovery and
-            high-resolution image synthesis. However, these models often
-            struggle to generalize well to new, unseen data due to domain
-            shifts or entanglement in image features. For example, in medical
-            imaging, multiple factors, such as disease pathology and imaging
-            modality, are often intertwined, making it difficult for the model
-            to isolate the relevant features for the specified task. This
-            entanglement can lead to the model relying on spurious
-            correlations, which may not be present in new data, thus hindering
-            its ability to generalize. Thus, disentanglement aims to separate
-            the various factors of variation in the data, allowing the model
-            to learn more robust and interpretable representations. In
-            computer vision, disentanglement models have been shown to help
-            increase generalization and explainability by isolating
-            task-relevant features from confounding factors. This enables the
-            model to adapt to new data distributions. In addition,
-            disentanglement improves model explainability by separating the
-            factors of variation and providing a clearer understanding of how
-            different features contribute to the final prediction.
-          </p>
-          <p>
-            Vision-language Foundation Models (VLFM) have emerged as a
-            powerful approach for learning disentangled representations,
-            offering several advantages over traditional generative
-            architectures due, in large part, to the enormous dataset size
-            they have been trained on. Earlier approaches designed to
-            disentangle latent factors relied on specialized generative
-            architectures such as Variational Auto Encoders (VAE), which don't
-            produce high-resolution images required for medical imaging, or
-            Generative Adversarial Networks (GAN), which are notoriously hard
-            to train. Normalizing Flows have been adapted to address
-            disentanglement in simpler contexts but are prohibitively
-            computationally expensive.
-          </p>
-          <p>
-            Other challenges faced when adapting traditional models include
-            their difficulties in training them end-to-end, and their
-            requirement for specialized architectural components for
-            conditioning such as AdaIN, FiLM, SPADE. Furthermore, models often
-            require specific heuristics to permit traversals in latent space.
-            In contrast, vision-language foundation models offer more
-            efficient and scalable solutions. The power of these foundation
-            models to disentangle latent representations, enabling targeted
-            image modifications while preserving semantic content and other
-            attributes, has been explored in the natural imaging domain.
-            However, this domain remains under-explored in the context of
-            medical images, where complex entanglement is common and
-            challenging to address.
-          </p>
-          <p>
-            In this paper, we investigate the disentanglement capabilities of
-            Stable Diffusion, fine-tuned on medical images, and propose the
-            first method to traverse latent space based on language guidance
-            and see the factorizing effect on the resulting images. Language
-            guidance is seen to be effective at identifying in the latent
-            space. Additionally, interpolations between samples permit
-            continuous trajectories that can be sampled. Experiments
-            illustrate that the samples exhibit the same disentangled
-            properties, that is, the attribute of interest remains the same in
-            the image throughout the trajectory, becoming more prevalent
-            proportional to the distance from the starting point. We propose a
-            new metric,
-            <i>Classifier Flip Rate along a Trajectory (CFRT)</i>, to validate
-            the presence of the desired disentanglement.
-          </p>
-        </section>
+          <section id="introduction" class="mb-5">
+            <h2>Introduction</h2>
+            <p>
+              Deep learning models for medical imaging have shown
+              state-of-the-art performance across several tasks such as disease
+              classification, image segmentation, drug discovery and
+              high-resolution image synthesis. However, these models often
+              struggle to generalize well to new, unseen data due to domain
+              shifts or entanglement in image features. For example, in medical
+              imaging, multiple factors, such as disease pathology and imaging
+              modality, are often intertwined, making it difficult for the model
+              to isolate the relevant features for the specified task. This
+              entanglement can lead to the model relying on spurious
+              correlations, which may not be present in new data, thus hindering
+              its ability to generalize. Thus, disentanglement aims to separate
+              the various factors of variation in the data, allowing the model
+              to learn more robust and interpretable representations. In
+              computer vision, disentanglement models have been shown to help
+              increase generalization and explainability by isolating
+              task-relevant features from confounding factors. This enables the
+              model to adapt to new data distributions. In addition,
+              disentanglement improves model explainability by separating the
+              factors of variation and providing a clearer understanding of how
+              different features contribute to the final prediction.
+            </p>
+            <p>
+              Vision-language Foundation Models (VLFM) have emerged as a
+              powerful approach for learning disentangled representations,
+              offering several advantages over traditional generative
+              architectures due, in large part, to the enormous dataset size
+              they have been trained on. Earlier approaches designed to
+              disentangle latent factors relied on specialized generative
+              architectures such as Variational Auto Encoders (VAE), which don't
+              produce high-resolution images required for medical imaging, or
+              Generative Adversarial Networks (GAN), which are notoriously hard
+              to train. Normalizing Flows have been adapted to address
+              disentanglement in simpler contexts but are prohibitively
+              computationally expensive.
+            </p>
+            <p>
+              Other challenges faced when adapting traditional models include
+              their difficulties in training them end-to-end, and their
+              requirement for specialized architectural components for
+              conditioning such as AdaIN, FiLM, SPADE. Furthermore, models often
+              require specific heuristics to permit traversals in latent space.
+              In contrast, vision-language foundation models offer more
+              efficient and scalable solutions. The power of these foundation
+              models to disentangle latent representations, enabling targeted
+              image modifications while preserving semantic content and other
+              attributes, has been explored in the natural imaging domain.
+              However, this domain remains under-explored in the context of
+              medical images, where complex entanglement is common and
+              challenging to address.
+            </p>
+            <p>
+              In this paper, we investigate the disentanglement capabilities of
+              Stable Diffusion, fine-tuned on medical images, and propose the
+              first method to traverse latent space based on language guidance
+              and see the factorizing effect on the resulting images. Language
+              guidance is seen to be effective at identifying in the latent
+              space. Additionally, interpolations between samples permit
+              continuous trajectories that can be sampled. Experiments
+              illustrate that the samples exhibit the same disentangled
+              properties, that is, the attribute of interest remains the same in
+              the image throughout the trajectory, becoming more prevalent
+              proportional to the distance from the starting point. We propose a
+              new metric,
+              <i>Classifier Flip Rate along a Trajectory (CFRT)</i>, to validate
+              the presence of the desired disentanglement.
+            </p>
+          </section>
 
-        <section id="bibtex" class="mb-5">
-          <h2>BibTeX</h2>
-          <pre class="bg-light p-3 rounded border">
+          <section id="bibtex" class="mb-5">
+            <h2>BibTeX</h2>
+            <pre class="bg-light p-3 rounded border">
 @inproceedings{tehraninasab2025language,
   title     = {Language-Guided Trajectory Traversal in Disentangled Stable Diffusion Latent Space for Factorized Medical Image Generation},
   author    = {TehraniNasab, Zahra and Kumar, Amar and Arbel, Tal},
@@ -380,86 +464,92 @@
   address   = {Nashville, USA},
   month     = {June},
   note      = {Proceedings Track}
-}          </pre>
-        </section>
+}          </pre
+            >
+          </section>
+        </main>
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
 
-      </main>
-    </div><!-- /row -->
-  </div><!-- /container -->
+    <footer class="custom-footer">
+      <div class="footer-box">
+        <h5>Acknowledgments and Funding</h5>
+        <p class="small">
+          The authors are grateful for funding provided by the Natural Sciences
+          and Engineering Research Council of Canada, the Canadian Institute for
+          Advanced Research (CIFAR) Artificial Intelligence Chairs program, Mila
+          - Quebec AI Institute, Google Research, Calcul Québec, and the Digital
+          Research Alliance of Canada.
+        </p>
+      </div>
 
-  <footer class="custom-footer">
-    <div class="footer-box">
-      <h5>Acknowledgments and Funding</h5>
-      <p class="small">
-        The authors are grateful for funding provided by the Natural Sciences and Engineering Research Council of Canada, the Canadian Institute for Advanced Research (CIFAR) Artificial Intelligence Chairs program, Mila - Quebec AI Institute, Google Research, Calcul Québec, and the Digital Research Alliance of Canada.
+      <p class="small mb-3">
+        © Zahra TehraniNasab, Amar Kumar | 2025 MIV-CVPR Workshop Proceedings
       </p>
-    </div>
-  
-    <p class="small mb-3">© Zahra TehraniNasab, Amar Kumar | 2025 MIV-CVPR Workshop Proceedings</p>
-  
-    <div class="visitor-counter">
-      <span id="visitor-count">Loading...</span> visitors to this page
-    </div>
-  </footer>
-  
-  
-  
 
-  <!-- Bootstrap JS bundle (scrollspy, collapse, etc.) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="visitor-counter">
+        <span id="visitor-count">Loading...</span> visitors to this page
+      </div>
+    </footer>
 
-  <!-- Visitor Counter Script -->
+    <!-- Bootstrap JS bundle (scrollspy, collapse, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Visitor Counter Script -->
     <script>
-    // Wait for the DOM to be fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-    // Get the counter element
-    const counterElement = document.getElementById('visitor-count');
-    
-    // Cloudflare Worker URL - our deployed worker
-    const workerBaseUrl = 'https://sd-latent-traversal.zahratehraninasab.workers.dev';
-    
-    // Function to update the display with count
-    function updateCounterDisplay(count) {
-        if (counterElement) {
+      // Wait for the DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the counter element
+        const counterElement = document.getElementById("visitor-count");
+
+        // Cloudflare Worker URL - our deployed worker
+        const workerBaseUrl =
+          "https://sd-latent-traversal.zahratehraninasab.workers.dev";
+
+        // Function to update the display with count
+        function updateCounterDisplay(count) {
+          if (counterElement) {
             counterElement.textContent = count.toLocaleString();
+          }
         }
-    }
-    
-    // Function to handle errors
-    function handleError(error) {
-        console.error('Error with visitor counter:', error);
-        // If error occurs, show a default value
-        if (counterElement) {
-            counterElement.textContent = '1+';
+
+        // Function to handle errors
+        function handleError(error) {
+          console.error("Error with visitor counter:", error);
+          // If error occurs, show a default value
+          if (counterElement) {
+            counterElement.textContent = "1+";
+          }
         }
-    }
-    
-    try {
-        // Always call the increment endpoint - the worker will handle uniqueness by IP
-        fetch(`${workerBaseUrl}/increment`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
+
+        try {
+          // Always call the increment endpoint - the worker will handle uniqueness by IP
+          fetch(`${workerBaseUrl}/increment`)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+              return response.json();
             })
-            .then(data => {
-                updateCounterDisplay(data.count);
+            .then((data) => {
+              updateCounterDisplay(data.count);
             })
             .catch(handleError);
-    } catch (error) {
-        handleError(error);
-    }
-    });
+        } catch (error) {
+          handleError(error);
+        }
+      });
     </script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener("DOMContentLoaded", function () {
         const sections = document.querySelectorAll("section");
-      
+
         const observer = new IntersectionObserver(
-          entries => {
-            entries.forEach(entry => {
+          (entries) => {
+            entries.forEach((entry) => {
               if (entry.isIntersecting) {
                 entry.target.classList.add("visible");
               } else {
@@ -468,15 +558,14 @@
             });
           },
           {
-            threshold: 0.1
-          }
+            threshold: 0.1,
+          },
         );
-      
-        sections.forEach(section => {
+
+        sections.forEach((section) => {
           observer.observe(section);
         });
       });
-      </script>
-      
-</body>
+    </script>
+  </body>
 </html>
