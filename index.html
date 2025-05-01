@@ -104,6 +104,14 @@
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }    
     
     section h2 {
@@ -373,5 +381,31 @@
     }
     });
     </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll("section");
+      
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              } else {
+                entry.target.classList.remove("visible");
+              }
+            });
+          },
+          {
+            threshold: 0.1
+          }
+        );
+      
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      });
+      </script>
+      
 </body>
 </html>
