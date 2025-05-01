@@ -297,6 +297,77 @@
             </p>
         </section>
 
+        <section id="introduction" class="mb-5">
+          <h2>Introduction</h2>
+          <p>
+            Deep learning models for medical imaging have shown
+            state-of-the-art performance across several tasks such as disease
+            classification, image segmentation, drug discovery and
+            high-resolution image synthesis. However, these models often
+            struggle to generalize well to new, unseen data due to domain
+            shifts or entanglement in image features. For example, in medical
+            imaging, multiple factors, such as disease pathology and imaging
+            modality, are often intertwined, making it difficult for the model
+            to isolate the relevant features for the specified task. This
+            entanglement can lead to the model relying on spurious
+            correlations, which may not be present in new data, thus hindering
+            its ability to generalize. Thus, disentanglement aims to separate
+            the various factors of variation in the data, allowing the model
+            to learn more robust and interpretable representations. In
+            computer vision, disentanglement models have been shown to help
+            increase generalization and explainability by isolating
+            task-relevant features from confounding factors. This enables the
+            model to adapt to new data distributions. In addition,
+            disentanglement improves model explainability by separating the
+            factors of variation and providing a clearer understanding of how
+            different features contribute to the final prediction.
+          </p>
+          <p>
+            Vision-language Foundation Models (VLFM) have emerged as a
+            powerful approach for learning disentangled representations,
+            offering several advantages over traditional generative
+            architectures due, in large part, to the enormous dataset size
+            they have been trained on. Earlier approaches designed to
+            disentangle latent factors relied on specialized generative
+            architectures such as Variational Auto Encoders (VAE), which don't
+            produce high-resolution images required for medical imaging, or
+            Generative Adversarial Networks (GAN), which are notoriously hard
+            to train. Normalizing Flows have been adapted to address
+            disentanglement in simpler contexts but are prohibitively
+            computationally expensive.
+          </p>
+          <p>
+            Other challenges faced when adapting traditional models include
+            their difficulties in training them end-to-end, and their
+            requirement for specialized architectural components for
+            conditioning such as AdaIN, FiLM, SPADE. Furthermore, models often
+            require specific heuristics to permit traversals in latent space.
+            In contrast, vision-language foundation models offer more
+            efficient and scalable solutions. The power of these foundation
+            models to disentangle latent representations, enabling targeted
+            image modifications while preserving semantic content and other
+            attributes, has been explored in the natural imaging domain.
+            However, this domain remains under-explored in the context of
+            medical images, where complex entanglement is common and
+            challenging to address.
+          </p>
+          <p>
+            In this paper, we investigate the disentanglement capabilities of
+            Stable Diffusion, fine-tuned on medical images, and propose the
+            first method to traverse latent space based on language guidance
+            and see the factorizing effect on the resulting images. Language
+            guidance is seen to be effective at identifying in the latent
+            space. Additionally, interpolations between samples permit
+            continuous trajectories that can be sampled. Experiments
+            illustrate that the samples exhibit the same disentangled
+            properties, that is, the attribute of interest remains the same in
+            the image throughout the trajectory, becoming more prevalent
+            proportional to the distance from the starting point. We propose a
+            new metric,
+            <i>Classifier Flip Rate along a Trajectory (CFRT)</i>, to validate
+            the presence of the desired disentanglement.
+          </p>
+        </section>
 
         <section id="bibtex" class="mb-5">
           <h2>BibTeX</h2>
