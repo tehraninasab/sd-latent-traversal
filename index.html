@@ -15,6 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
     <style>
       body {
         font-family: "Inter", sans-serif;
@@ -254,6 +258,71 @@
           justify-content: center;
         }
       }
+
+      .video-container {
+        max-width: 65%; /* Adjust this percentage to match the text width */
+        margin: 0 auto; /* Center the video */
+      }
+
+      .custom-navbar {
+        background-color: #800020; /* Dark red color */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      }
+      
+      .navbar-brand {
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: #fff; /* White text for contrast */
+      }
+      
+      .nav-link {
+        font-weight: 500;
+        color: #fff !important; /* Ensure links are white */
+      }
+      
+      .nav-link:hover {
+        text-decoration: underline;
+        color: #ffcccb !important; /* Light red hover effect */
+      }
+      
+      .nav-link i {
+        color: #ffcccb; /* Icon color */
+      }
+
+      .navbar-nav {
+        gap: 2rem; /* Adjust horizontal spacing between icons */
+      }
+      
+      .nav-link i {
+        font-size: 1.5rem; /* Adjust icon size */
+        color: #ffcccb; /* Icon color */
+      }
+      
+      .nav-link:hover i {
+        color: #fff; /* Change icon color on hover */
+      }
+      
+      .nav-link span {
+        font-weight: 500;
+        color: #fff; /* Text color */
+      }
+
+      .custom-navbar {
+        background-color: #800020; /* Dark red color */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 0.5rem 1rem; /* Reduce vertical padding */
+      }
+      
+      .nav-link {
+        font-size: 0.9rem; /* Adjust text size */
+        padding: 0.1rem 0.5rem; /* Reduce padding inside links */
+      }
+      
+      .navbar-toggler {
+        padding: 0.1rem 0.5rem; /* Adjust toggle button padding */
+      }
+
+      
     </style>
   </head>
   <body
@@ -262,6 +331,57 @@
     data-bs-smooth-scroll="true"
     tabindex="0"
   >
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+      <div class="container justify-content-center">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto d-flex justify-content-center gap-4">
+            <li class="nav-item">
+              <a class="nav-link text-center" href="#abstract">
+                <i class="fas fa-book-open"></i>
+                <span class="d-block mt-1">Abstract</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="#method">
+                <i class="fas fa-cogs"></i>
+                <span class="d-block mt-1">Method</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="#results">
+                <i class="fas fa-chart-bar"></i>
+                <span class="d-block mt-1">Results</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="#conclusion">
+                <i class="fas fa-lightbulb"></i>
+                <span class="d-block mt-1">Conclusion</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="#bibtex">
+                <i class="fas fa-quote-right"></i>
+                <span class="d-block mt-1">Citation</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- ================= HEADER ================= -->
     <header class="custom-header w-100 fade-in">
       <div class="container">
@@ -366,26 +486,42 @@
       </div>
     </header>
     <div class="container-lg my-4">
-      <!-- ================= TEASER ================= -->
-      <figure class="text-center fade-in">
-        <div class="d-inline-block w-50 text-start">
-          <!-- Add text-start here -->
-          <img
-            src="images/trajectory-traversal.jpg"
-            alt="Paper teaser figure"
-            class="img-fluid rounded"
-          />
-          <figcaption class="text-muted small mt-2">
-            Traversal along the latent trajectories of Stable Diffusion using
-            language guidance. Given an initial chest X-ray projected onto
-            latent space (start point), traversal along the trajectory is
-            performed via language guidance. Sampling along the trajectory
-            results in only a single attribute (e.g. "medical devices", "pleural
-            effusion") being altered from the start point ("neutral"), while the
-            patient identity is maintained.
-          </figcaption>
-        </div>
-      </figure>
+        <!-- ================= TEASER ================= -->
+        <figure class="text-center fade-in">
+          <div class="d-inline-block w-50 text-start">
+            <!-- Add text-start here -->
+            <img
+              src="images/trajectory-traversal.jpg"
+              alt="Paper teaser figure"
+              class="img-fluid rounded"
+            />
+            <figcaption class="text-muted small mt-2">
+              Figure 1: Traversal along the latent trajectories of Stable Diffusion using
+              language guidance. Given an initial chest X-ray projected onto
+              latent space (start point), traversal along the trajectory is
+              performed via language guidance. Sampling along the trajectory
+              results in only a single attribute (e.g. "medical devices", "pleural
+              effusion") being altered from the start point ("neutral"), while the
+              patient identity is maintained.
+            </figcaption>
+          </div>
+        </figure>
+
+        <!-- Trajectory Traversal Video -->
+        <figure class="text-center fade-in">
+          <div class="video-container">
+            <video
+              class="img-fluid rounded"
+              controls
+              autoplay
+              muted
+              loop
+            >
+              <source src="images/Bezier_Interpolations.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </figure>
 
       <!-- ================= BODY LAYOUT ============ -->
       <div class="row gx-5 mt-4 justify-content-center">
@@ -415,76 +551,90 @@
             </p>
           </section>
 
-          <section id="introduction" class="mb-5">
-            <h2>Introduction</h2>
-            <p>
-              Deep learning models for medical imaging have shown
-              state-of-the-art performance across several tasks such as disease
-              classification, image segmentation, drug discovery and
-              high-resolution image synthesis. However, these models often
-              struggle to generalize well to new, unseen data due to domain
-              shifts or entanglement in image features. For example, in medical
-              imaging, multiple factors, such as disease pathology and imaging
-              modality, are often intertwined, making it difficult for the model
-              to isolate the relevant features for the specified task. This
-              entanglement can lead to the model relying on spurious
-              correlations, which may not be present in new data, thus hindering
-              its ability to generalize. Thus, disentanglement aims to separate
-              the various factors of variation in the data, allowing the model
-              to learn more robust and interpretable representations. In
-              computer vision, disentanglement models have been shown to help
-              increase generalization and explainability by isolating
-              task-relevant features from confounding factors. This enables the
-              model to adapt to new data distributions. In addition,
-              disentanglement improves model explainability by separating the
-              factors of variation and providing a clearer understanding of how
-              different features contribute to the final prediction.
-            </p>
-            <p>
-              Vision-language Foundation Models (VLFM) have emerged as a
-              powerful approach for learning disentangled representations,
-              offering several advantages over traditional generative
-              architectures due, in large part, to the enormous dataset size
-              they have been trained on. Earlier approaches designed to
-              disentangle latent factors relied on specialized generative
-              architectures such as Variational Auto Encoders (VAE), which don't
-              produce high-resolution images required for medical imaging, or
-              Generative Adversarial Networks (GAN), which are notoriously hard
-              to train. Normalizing Flows have been adapted to address
-              disentanglement in simpler contexts but are prohibitively
-              computationally expensive.
-            </p>
-            <p>
-              Other challenges faced when adapting traditional models include
-              their difficulties in training them end-to-end, and their
-              requirement for specialized architectural components for
-              conditioning such as AdaIN, FiLM, SPADE. Furthermore, models often
-              require specific heuristics to permit traversals in latent space.
-              In contrast, vision-language foundation models offer more
-              efficient and scalable solutions. The power of these foundation
-              models to disentangle latent representations, enabling targeted
-              image modifications while preserving semantic content and other
-              attributes, has been explored in the natural imaging domain.
-              However, this domain remains under-explored in the context of
-              medical images, where complex entanglement is common and
-              challenging to address.
-            </p>
-            <p>
-              In this paper, we investigate the disentanglement capabilities of
-              Stable Diffusion, fine-tuned on medical images, and propose the
-              first method to traverse latent space based on language guidance
-              and see the factorizing effect on the resulting images. Language
-              guidance is seen to be effective at identifying in the latent
-              space. Additionally, interpolations between samples permit
-              continuous trajectories that can be sampled. Experiments
-              illustrate that the samples exhibit the same disentangled
-              properties, that is, the attribute of interest remains the same in
-              the image throughout the trajectory, becoming more prevalent
-              proportional to the distance from the starting point. We propose a
-              new metric,
-              <i>Classifier Flip Rate along a Trajectory (CFRT)</i>, to validate
-              the presence of the desired disentanglement.
-            </p>
+
+          <section id="method" class="my-5">
+            <h2>Method</h2>
+          
+            <!-- Key Contributions Box -->
+            <div class="key-contributions-box p-4 rounded shadow-sm bg-light">
+              <h3>Key Contributions</h3>
+              <ul>
+                <li>In this paper, we investigate the disentanglement capabilities of Stable Diffusion Rombach et al. (2022), fine-tuned on medical images.</li>
+                <li>We propose the first method to traverse latent space based on language guidance and see the factorizing effect on the resulting images. Interpolation between samples permit continuous trajectories that can be sampled.</li>
+                <li>We propose a new metric, Classifier Flip Rate along a Trajectory (CFRT), to validate the presence of the desired disentanglement.</li>
+              </ul>
+            </div>
+          
+            <!-- Architecture Figure -->
+            <figure class="text-start mt-4">
+              <img
+                src="images/arch.jpg"
+                alt="Overview of image synthesis pipeline"
+                class="img-fluid rounded shadow-sm"
+              />
+              <figcaption class="text-muted small mt-2">
+                Figure 2: Reverse Diffusion for synthesizing disentangled images from text prompts using fine-tuned Stable Diffusion. 
+                The reverse diffusion process takes noisy latents, <i>z<sub>T</sub></i>, as input. A U-Net architecture generates the denoised latent, <i>z<sub>0</sub></i>. 
+                During the denoising process, the text embeddings, <i>e<sub>t</sub></i> (<i>t</i> ∈ {0,..,T}), from the pre-trained CLIP encoder are added to the latent via cross-attention modules 
+                <a href="https://arxiv.org/abs/2112.10752" target="_blank" rel="noopener noreferrer">[Rombach et al., 2022]</a>. 
+                Finally, the de-noised latent is passed through the decoder to create the synthesized image. 
+                Note that the text embeddings can be replaced at some intermediate timestep <i>t</i> during the reverse diffusion.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section id="results" class="my-5 text-start">
+            <h2 class="text-start">Results</h2>
+            
+            <!-- Figure 1 -->
+            <figure class="text-start mt-4">
+              <img
+                src="images/fig_disent.jpg"
+                alt="Disentanglement property of Stable Diffusion"
+                class="img-fluid rounded shadow-sm"
+              />
+              <figcaption class="text-muted small mt-2">
+                Figure 3: Disentanglement property of the  
+                <a href="https://arxiv.org/abs/2112.10752" target="_blank" rel="noopener noreferrer">Stable Diffusion</a>. 
+                Starting from Gaussian noise (left image) at sampling timepoint t=T, the reverse diffusion process denoises the image (right) at timepoint t=0. 
+                The text prompts for the “neutral” images (with dark borders) for CheXpert and ISIC are <i>Chest x-ray with no significant findings</i> and 
+                <i>A dermoscopic image with melanocytic nevus (NV)</i>, respectively. The images on the right (matched with colored borders) are the synthesized images 
+                with the same text prompts <i>Chest x-ray showing Support Devices</i> for CheXpert and <i>A dermoscopic image with melanocytic nevus (NV) showing ink</i> 
+                sampled at different timesteps during the reverse diffusion process. Notice that sampling closer to the timepoint t=0 results in a synthesized image similar 
+                to the original image and as we sample closer to the timepoints t=T, the patient’s anatomical structure changes.
+              </figcaption>
+            </figure>
+          
+            <!-- Figure 2 -->
+            <figure class="text-start mt-4">
+              <img
+                src="images/latent-tsne.jpg"
+                alt="t-SNE plot of generated latent vectors"
+                class="img-fluid rounded shadow-sm"
+              />
+              <figcaption class="text-muted small mt-2">
+                Figure 4: t-SNE plot of generated latent vectors of SD sampled from noise showing disentanglement. 
+                The dots and the images with borders show the resulting SD latent vectors and their corresponding “neutral” images with the text prompt 
+                <i>Normal chest x-ray with no significant findings</i>. For each generated sample, we swap the original text condition to 
+                <i>Chest x-ray showing Support Devices</i> for one trajectory and to <i>Chest x-ray showing Pleural Effusion</i> for a different trajectory 
+                at multiple denoising steps during reverse diffusion.
+              </figcaption>
+            </figure>
+            <figure class="text-start mt-4">
+              <img
+                src="images/demo.jpg"
+                alt="Bezier Interpolations Along the Trajectory"
+                class="img-fluid rounded shadow-sm"
+              />
+              <figcaption class="text-muted small mt-2">
+                Figure 5: Traversal along the latent trajectories of Stable Diffusion using language guidance. 
+                Given a neutral image of a chest X-ray projected onto latent space (start point), traversal along the trajectory is performed via language guidance. 
+                Sampling along the trajectory results in only a single attribute (e.g. <span style="color:rgb(90, 249, 90);">support devices</span>, 
+                <span style="color:rgb(182, 32, 182);">pleural effusion</span>, <span style="color:pink;">gel bubbles</span>, 
+                <span style="color:orange;">hairs</span>, <span style="color:cyan;">ink</span>, <span style="color:red;">ruler</span>) 
+                being altered from the start point (“neutral image”), while becoming more severe along each trajectory, while the patient identity is maintained.
+              </figcaption>
+            </figure>
           </section>
 
           <section id="conclusion" class="mb-5">
@@ -615,6 +765,30 @@
 
         sections.forEach((section) => {
           observer.observe(section);
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbarHeight = document.querySelector(".custom-navbar").offsetHeight;
+    
+        // Add click event listener to all nav links
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default anchor behavior
+    
+            const targetId = this.getAttribute("href").substring(1); // Get the target section ID
+            const targetElement = document.getElementById(targetId);
+    
+            if (targetElement) {
+              const offsetTop = targetElement.offsetTop - navbarHeight; // Adjust for navbar height
+              window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth", // Smooth scrolling
+              });
+            }
+          });
         });
       });
     </script>
