@@ -1,0 +1,3 @@
+Path,Sex,Age,Frontal/Lateral,AP/PA,No Finding,Cardiomegaly,Lung Opacity,Edema,Pneumonia,Pneumothorax,Pleural Effusion,Support Devices
+/usr/local/data/amarkr/lgcig/outputs/chexpert_train/patient02013/view1_frontal/img.jpeg,Male,70,Frontal,AP,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+/usr/local/data/amarkr/lgcig/outputs/chexpert_train/patient02013/edited/without.jpeg,Male,70,Frontal,AP,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
