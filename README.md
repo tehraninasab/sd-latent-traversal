@@ -3,9 +3,10 @@
 
 <div align="center">
 
+🌐 **[Project Page](https://tehraninasab.github.io/sd-latent-traversal/)** &nbsp;·&nbsp;
+📄 **[Paper (CVF)](https://openaccess.thecvf.com/content/CVPR2025W/MIV/papers/TehraniNasab_Language-Guided_Trajectory_Traversal_in_Disentangled_Stable_Diffusion_Latent_Space_for_CVPRW_2025_paper.pdf)** &nbsp;·&nbsp;
 📄 **[arXiv](https://arxiv.org/abs/2503.23623)** &nbsp;·&nbsp;
 🖼️ **[Poster](https://tehraninasab.github.io/sd-latent-traversal/images/cvpr25_poster_disentanglement_miv.pdf)** &nbsp;·&nbsp;
-💻 **[Code](https://tehraninasab.github.io/sd-latent-traversal/)**
 </div>
 
 
